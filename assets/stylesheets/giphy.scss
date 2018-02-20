@@ -17,28 +17,6 @@
     width: 100%;
   }
 
-  input.autocomplete {
-    width: 40%;
-  }
-
-  div.categories {
-    float: left;
-    width: 50%;
-
-    .combobox {
-      width: 95%;
-    }
-  }
-
-  div.tags {
-    float: left;
-    width: 50%;
-
-    .ac-wrap {
-      width: 95% !important;
-    }
-  }
-
   .giphy-box {
 
     column-width: 30%;
@@ -62,11 +40,6 @@
       border-bottom: 3px solid transparent;
       opacity: 0.75;
       width: 100%;
-    }
-
-    .giphy-img.selected {
-      border-bottom: 3px solid $tertiary;
-      opacity: 1.0;
     }
   }
 }
