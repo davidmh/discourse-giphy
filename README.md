@@ -3,11 +3,14 @@ Giphy search for discourse
 
 Work in progress based on [cpradio/discourse-plugin-replygif](https://github.com/cpradio/discourse-plugin-replygif)
 
-Composer window UI
+![composer button](./screenshot-usage.1.png)
 
-<iframe src='https://gfycat.com/ifr/TalkativeImpureLeafcutterant' frameborder='0' scrolling='no' width='640' height='328' allowfullscreen></iframe>
+![search box](./screenshot-usage.2.png)
+
+![result](./screenshot-usage.3.png)
 
 Settings
+--------
 
 ![settings](./screenshot-settings.png)
 
