@@ -2,3 +2,5 @@ en:
   site_settings:
     giphy_enabled: "Enable Giphy"
     giphy_api_key: "Giphy API key"
+    giphy_limit: "Images per page"
+    giphy_rating: "Filter by rating"

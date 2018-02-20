@@ -5,3 +5,16 @@ plugins:
   giphy_api_key:
     default: ''
     client: true
+  giphy_limit:
+    default: 8
+    client: true
+  giphy_rating:
+    default: 'G'
+    type: enum
+    choices:
+      - Y
+      - G
+      - PG
+      - PG-13
+      - R
+    client: true

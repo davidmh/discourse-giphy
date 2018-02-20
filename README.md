@@ -8,4 +8,4 @@ TODO
 
 - [ ] paginate results
 - [ ] find support for webp and mp4
-- [ ] fix styles
+- [ ] screenshots/gifs

@@ -19,35 +19,38 @@ export default Ember.Controller.extend(ModalFunctionality, {
 
       this.send("closeModal");
     },
-    refresh: function(q) {
-      this.set("query", q);
-      Ember.run.debounce(null, () => {
-        const query = this.get("query");
-        if (query && query.length > 2) {
-          this.set("loading", true);
-          const params = {
-            url: this.getEndpoint(query)
-          };
+    refresh: function(query) {
+      this.set("query", query);
+      Ember.run.debounce(this, this.search, 300);
+    }
+  },
 
-          if (query in cache) {
-            this.get("currentGifs").setObjects(cache[query]);
-            this.set("loading", false);
-          } else {
-            $.ajax(params).done(({ data = [] }) => {
-              const images = data.map(gif => ({
-                title: gif.title,
-                preview: gif.images.fixed_width_downsampled,
-                medium: gif.images.downsized_medium.url
-              }));
-              // save it
-              cache[query] = images;
-              // and send it
-              this.get("currentGifs").setObjects(images);
-              this.set("loading", false);
-            });
-          }
-        }
-      }, 50, 50);
+  search: function() {
+    const query = this.get("query");
+
+    if (query && query.length > 2) {
+      this.set("loading", true);
+      const params = {
+        url: this.getEndpoint(query)
+      };
+
+      if (query in cache) {
+        this.get("currentGifs").setObjects(cache[query]);
+        this.set("loading", false);
+      } else {
+        $.ajax(params).done(({ data = [] }) => {
+          const images = data.map(gif => ({
+            title: gif.title,
+            preview: gif.images.fixed_width_downsampled,
+            medium: gif.images.downsized_medium.url
+          }));
+          // save it
+          cache[query] = images;
+          // and send it
+          this.get("currentGifs").setObjects(images);
+          this.set("loading", false);
+        });
+      }
     }
   },
 
@@ -59,14 +62,19 @@ export default Ember.Controller.extend(ModalFunctionality, {
   },
 
   getEndpoint: function(query) {
+    const {
+        giphy_api_key,
+        giphy_limit,
+        giphy_rating
+    } = this.siteSettings;
     return "https://api.giphy.com/v1/gifs/search?" +
       $.param({
-        api_key: this.siteSettings.giphy_api_key,
         lang: 'en',
-        limit: 8,
         offset: 0,
+        api_key: giphy_api_key,
+        limit: giphy_limit,
+        rating: giphy_rating,
         q: query,
-        rating: 'G',
       });
   }
 });
