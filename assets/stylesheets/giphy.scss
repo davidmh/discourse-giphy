@@ -1,0 +1,72 @@
+.wmd-giphy-button:before {
+  content: "\f01d"
+}
+
+#giphy-modal {
+  overflow: visible;
+
+  .giphy-content {
+    max-height: 335px;
+    min-height: 200px;
+    overflow-y: scroll;
+    clear: both;
+  }
+
+  .ac-wrap {
+    display: inline-block;
+    width: 100%;
+  }
+
+  input.autocomplete {
+    width: 40%;
+  }
+
+  div.categories {
+    float: left;
+    width: 50%;
+
+    .combobox {
+      width: 95%;
+    }
+  }
+
+  div.tags {
+    float: left;
+    width: 50%;
+
+    .ac-wrap {
+      width: 95% !important;
+    }
+  }
+
+  .giphy-box {
+
+    column-width: 30%;
+    column-count: 5;
+    column-gap: 6px;
+
+    -webkit-column-width: 30%;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 6px;
+
+    -moz-column-width: 30%;
+    -moz-column-count: 3;
+    -moz-column-gap: 6px;
+
+    .giphy-imgwrap {
+      margin-bottom: 3px;
+      text-align: center;
+    }
+
+    .giphy-img {
+      border-bottom: 3px solid transparent;
+      opacity: 0.75;
+      width: 100%;
+    }
+
+    .giphy-img.selected {
+      border-bottom: 3px solid $tertiary;
+      opacity: 1.0;
+    }
+  }
+}

@@ -5,3 +5,5 @@
 # url: https://github.com/davidmh/discourse-giphy
 
 enabled_site_setting :giphy_enabled
+
+register_asset 'stylesheets/giphy.scss'

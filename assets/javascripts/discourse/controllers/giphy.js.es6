@@ -36,7 +36,7 @@ export default Ember.Controller.extend(ModalFunctionality, {
             $.ajax(params).done(({ data = [] }) => {
               const images = data.map(gif => ({
                 title: gif.title,
-                preview: gif.images.fixed_height_small,
+                preview: gif.images.fixed_width_downsampled,
                 medium: gif.images.downsized_medium.url
               }));
               // save it
