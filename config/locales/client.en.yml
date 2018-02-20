@@ -1,0 +1,8 @@
+en:
+  js:
+    composer:
+      giphy_button_title: "Search Giphy"
+    giphy:
+      modal_title: "Search Giphy"
+      query: "Term"
+      insert: "Insert Selected Images"

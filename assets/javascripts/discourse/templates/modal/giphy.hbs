@@ -1,0 +1,19 @@
+{{#d-modal-body id="giphy-modal"}}
+  <div>
+    {{input
+      type="text"
+      name="query"
+      key-down="refresh"
+    }}
+  </div>
+  <div class="giphy-content">
+    {{#if loading}}
+      {{i18n "loading"}}
+    {{/if}}
+    <div class="giphy-box">
+      {{#each currentGifs as |result|}}
+        {{giphy-result content=result pick="pick"}}
+      {{/each}}
+    </div>
+  </div>
+{{/d-modal-body}}

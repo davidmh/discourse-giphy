@@ -1,0 +1,4 @@
+en:
+  site_settings:
+    giphy_enabled: "Enable Giphy"
+    giphy_api_key: "Giphy API key"

@@ -1,0 +1,7 @@
+plugins:
+  giphy_enabled:
+    default: false
+    client: true
+  giphy_api_key:
+    default: ''
+    client: true
