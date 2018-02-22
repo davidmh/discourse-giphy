@@ -19,3 +19,4 @@ TODO
 
 - [ ] paginate results
 - [ ] find support for webp and mp4
+- [ ] add sticker support
