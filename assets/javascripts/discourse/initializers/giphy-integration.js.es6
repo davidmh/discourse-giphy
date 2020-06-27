@@ -20,7 +20,7 @@ function initializePlugin(api) {
       toolbar.addButton({
         id: "giphy_button",
         group: "extras",
-        icon: "play-circle-o",
+        icon: "far-play-circle",
         action: "showGiphyModal"
       });
     });
